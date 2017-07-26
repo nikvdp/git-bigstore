@@ -63,7 +63,7 @@ setup(
         'boto3',
         'python-dateutil',
         'pytz',
-        'python-cloudfiles',
+        # 'python-cloudfiles',
     ],
 )
 
