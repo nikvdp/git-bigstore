@@ -369,11 +369,12 @@ def filter_clean():
     else:
         file = tempfile.NamedTemporaryFile(mode='w+t', delete=False)
         hash_function = default_hash_function()
-        hash_function.update(firstline)
+        hash_function.update(firstline.encode(sys.stdin.encoding))
         file.write(firstline)
 
         for line in sys.stdin:
-            hash_function.update(line)
+            encoded = line.encode(sys.stdin.encoding)
+            hash_function.update(encoded)
             file.write(line)
 
         file.close()
