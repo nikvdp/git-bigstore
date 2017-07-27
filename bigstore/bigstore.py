@@ -433,7 +433,7 @@ def request_s3_credentials():
     s3_bucket = input("Bucket Name: ")
     s3_key = input("Access Key: ")
     s3_secret = input("Secret Key: ")
-    s3_profile_name = input("Profile Name: ")
+    # s3_profile_name = input("Profile Name: ")
 
     g().config("bigstore.backend", "s3", file=config_filename)
     g().config("bigstore.s3.bucket", s3_bucket, file=config_filename)
@@ -441,8 +441,8 @@ def request_s3_credentials():
         g().config("bigstore.s3.key", s3_key, file=config_filename)
     if s3_secret != '':
         g().config("bigstore.s3.secret", s3_secret, file=config_filename)
-    if s3_profile_name != '':
-        g().config("bigstore.s3.profile-name", s3_profile_name, file=config_filename)
+    # if s3_profile_name != '':
+    #     g().config("bigstore.s3.profile-name", s3_profile_name, file=config_filename)
 
 
 def request_google_cloud_storage_credentials():

@@ -22,7 +22,7 @@ except ImportError:
 class S3Backend(object):
     def __init__(self, bucket_name, key=None, secret=None, profile_name=None):
         self.bucket = bucket_name
-        self.session = boto3.Session(aws_access_key_id=key, aws_secret_access_key=secret, profile_name=profile_name)
+        self.session = boto3.Session(aws_access_key_id=key, aws_secret_access_key=secret)
         self.s3_client = self.session.client('s3')
 
     @property
